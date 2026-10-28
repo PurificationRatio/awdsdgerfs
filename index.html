@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Сапёр — Minesweeper</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Сапёр — главная">
+        <span class="brand-icon">✹</span><span>Сапёр<span class="brand-dot">.</span></span>
+      </a>
+      <button id="themeBtn" class="icon-button" title="Переключить тему" aria-label="Переключить тему">☾</button>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">МИНИ-ИГРА</p>
+      <h1>Проверь свою <span>удачу и логику.</span></h1>
+      <p class="subtitle">Открывай безопасные клетки, отмечай мины и постарайся не взорваться.</p>
+    </section>
+
+    <section class="game-layout">
+      <div class="game-card">
+        <div class="game-toolbar">
+          <div class="stat">
+            <span class="stat-label">МИНЫ</span>
+            <strong id="mineCount">010</strong>
+          </div>
+          <button id="restartBtn" class="face-button" title="Начать заново" aria-label="Начать заново">🙂</button>
+          <div class="stat stat-right">
+            <span class="stat-label">ВРЕМЯ</span>
+            <strong id="timer">000</strong>
+          </div>
+        </div>
+
+        <div class="controls">
+          <label for="difficulty">Сложность</label>
+          <select id="difficulty">
+            <option value="easy">Лёгкая · 9 × 9</option>
+            <option value="medium" selected>Средняя · 16 × 16</option>
+            <option value="hard">Сложная · 16 × 30</option>
+          </select>
+          <button id="newGameBtn" class="primary-button">Новая игра</button>
+        </div>
+
+        <div id="message" class="message" role="status">Нажми на любую клетку, чтобы начать.</div>
+        <div id="boardWrap" class="board-wrap">
+          <div id="board" class="board" role="grid" aria-label="Игровое поле"></div>
+        </div>
+        <div class="board-hint">ПК: левая кнопка — открыть, правая — флажок. Телефон: удерживай клетку для флажка.</div>
+      </div>
+
+      <aside class="side-column">
+        <section class="info-card">
+          <div class="card-heading"><span class="heading-icon">🏆</span><h2>Твои рекорды</h2></div>
+          <p class="muted">Лучшее время для каждой сложности. Рекорды сохраняются на этом устройстве.</p>
+          <div class="record-row"><span>Лёгкая</span><strong id="record-easy">—</strong></div>
+          <div class="record-row"><span>Средняя</span><strong id="record-medium">—</strong></div>
+          <div class="record-row"><span>Сложная</span><strong id="record-hard">—</strong></div>
+          <button id="resetRecordsBtn" class="text-button">Сбросить рекорды</button>
+        </section>
+        <section class="info-card how-card">
+          <div class="card-heading"><span class="heading-icon">💡</span><h2>Как играть</h2></div>
+          <ol>
+            <li>Открой клетку — число покажет, сколько мин рядом.</li>
+            <li>Поставь флажок на клетку, где, по твоему мнению, мина.</li>
+            <li>Открой все клетки без мин, чтобы победить.</li>
+          </ol>
+          <div class="number-legend">
+            <span class="n1">1</span><span class="n2">2</span><span class="n3">3</span><span class="n4">4</span>
+            <span class="legend-label">Числа показывают количество соседних мин.</span>
+          </div>
+        </section>
+      </aside>
+    </section>
+    <footer>Сапёр · Локальная игра без регистрации</footer>
+  </main>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div id="modalEmoji" class="modal-emoji">🎉</div>
+      <h2 id="modalTitle">Победа!</h2>
+      <p id="modalText">Отличная работа.</p>
+      <button id="modalNewGame" class="primary-button">Играть ещё</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
