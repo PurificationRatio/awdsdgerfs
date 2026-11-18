@@ -16,6 +16,7 @@ Minesweeper game for testing purposes
 1.JavaScript
 2.CSS
 3.Git/GitHub
+4.HTML
 
 ## Запуск
 1. Скачать архив.
